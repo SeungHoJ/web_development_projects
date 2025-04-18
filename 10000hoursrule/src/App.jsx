@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Box, Container, Modal, Typography } from "@mui/material"
 import InputForm from "./components/InputForm"
+import ResultBox from "./components/ResultBox"
 
 import ClockImage from './assets/clock.png'
 import TitleImage from './assets/title.png'
@@ -33,7 +34,7 @@ function App() {
 
   const copyUrl = () => {
     navigator.clipboard.writeText(window.location.href).then(() => {
-      alert('URL이 복사되었습니다다')
+      alert('URL이 복사되었습니다')
     })
   }
 
@@ -65,7 +66,18 @@ function App() {
         setField={setField}
         time={time}
         setTime={setTime}
-        handleCalculate={handleCalculate}/>
+        handleCalculate={handleCalculate}
+      />
+
+      <ResultBox
+        loading={loading}
+        resultVisible={resultVisible}
+        field={field}
+        time={time}
+        onModalOpen={() => setMoadlOpen(true)}
+        onShare={copyUrl}
+      />
+
      </Container>
     </Box>
   )
