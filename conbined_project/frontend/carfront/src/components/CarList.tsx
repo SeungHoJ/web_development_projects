@@ -3,6 +3,8 @@ import { getCars, deleteCar } from "../api/carapi";
 import { DataGrid, GridCellParams, GridColDef } from "@mui/x-data-grid";
 import  Snackbar  from "@mui/material/Snackbar";
 import AddCar from "./AddCar";
+import EditCar from "./EditCar";
+
 import { useState } from "react";
 
 function CarList(){
@@ -33,6 +35,16 @@ function CarList(){
     {field:'price', headerName : 'Price', width: 150},
     {
       field: 'edit',
+      headerName: '',
+      width: 90,
+      sortable: false,
+      filterable: false,
+      disableColumnMenu: true,
+      renderCell:(params: GridCellParams) =>
+        <EditCar cardata={params.row} />
+    },
+    {
+      field: 'delete',
       headerName: '',
       width: 90,
       sortable: false,

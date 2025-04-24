@@ -2,7 +2,7 @@ export type CarResponse = {
   brand: string;
   model: string;
   color: string;
-  registrationNumbeer : string;
+  registrationNumber : string;
   modelYear: number;
   price:number;
   _links:{
