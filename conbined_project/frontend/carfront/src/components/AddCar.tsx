@@ -1,5 +1,5 @@
 import Dialog from "@mui/material/Dialog";
-import { DialogActions } from "@mui/material";
+import { Button, DialogActions } from "@mui/material";
 // import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -45,13 +45,13 @@ function AddCar() {
   }
   return(
     <>
-      <button onClick={handleClickOpen}>New 차량 추가</button>
+      <Button onClick={handleClickOpen}>New 차량 추가</Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>New Car</DialogTitle>
         <CarDialogContent car={car} handleChange={handleChange} />
         <DialogActions>
-          <button onClick={handleClose}>취소</button>
-          <button onClick={handleSave}>저장</button>
+          <Button onClick={handleClose}>취소</Button>
+          <Button onClick={handleSave}>저장</Button>
         </DialogActions>
       </Dialog>
 
